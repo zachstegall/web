@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h2, p {
+	text-align: left;
+	color: rgba(0, 0, 0, 1.0);
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+h2 {
+	font-size: 5.5em;
+	max-height: 105px;
+}
+
+h3 {
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+}
+
+h4 {
+	margin-top: 0em;
+	margin-bottom: 1.0em;
+}
+
+p {
+	font-size: 1.7em;
+}
+
+div.present {
+	margin: 0 auto;
+	width: 22em;
+}
+
+.present div {
+	margin-left: 3em;
+	width: 19em;
+}
+
+.present p {
+	border-left: rgba(0, 0, 0, 1.0) solid thin;
+	text-align: left;
+	margin-left: 0.7em;
+	padding: 0.5em 0 0.5em 0.5em;
+}
+
+.present p#last {
+	padding-bottom: 5.0em;
+	margin-bottom: 0.5em;
+}
+
+div#links, div#snapbody, div#notebody, div#musicbody, div#brohbody {
+        margin-left: 5px;
+}
+
+a#link {
+        font-size: 1.2em;
+        margin-right: 0.75em;
+}
+
+sup {
+        font-size: 0.5em;
+}
+
+img#profile {
+	width: 100px;
+        height: 100px;
+	border-radius: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+
+
+/* HELLO_SECTION */
+
+#hello p {
+	margin-top: 0.5em;
+}
+
+div#hello {
+	opacity: 0;
+}
+
+
+/* NOTE_SECTION */
+
+div#note {
+	opacity: 0;
+}
+
+#note h3 {
+	font-size: 1.4em;
+}
+
+#note h4 {
+	font-size: 0.7em;
+}
+
+#note p {
+	font-size: 1.05em;
+}
+
+div#notebodysection {
+	margin: 0;
+}

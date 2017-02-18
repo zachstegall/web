@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color: rgba(255, 255, 255, 1.0);
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+h3, h4 {
+        font-family: 'Lato', sans-serif;
+        font-weight: normal;
+}
+
+h2, p, a, footer {
+	font-family: 'Lato', sans-serif;
+	font-weight: lighter;
+}
+
+img {
+	vertical-align: text-bottom;
+}
+
+
+a:link {
+	color: rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+}
+
+a:hover {
+	color: rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+}
+
+a:active {
+	color: rgba(0, 0, 0, 0.05);
+        text-decoration: none;
+}

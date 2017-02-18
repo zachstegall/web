@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zachary Stegall</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link id="size-stylesheet" rel="stylesheet" type="text/css" href="css/wide.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script src="jquery-1.12.1.js"></script>
+<script type="text/javascript" src="js/analytics.js"></script>
+<script type="text/javascript" src="js/style.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/pages.js"></script>
+</head>
+
+<body>
+  <div id="main" class="present">
+	<img id="profile" src="images/zsbw.jpg"></img>
+    <script>
+		var baseurl = "http://media.zacharystegall.co/";
+		var nodesToKeep = [];
+/*
+		// Profile Picture
+		var profilePic = document.createElement("img");
+    profilePic.setAttribute("id", "profile");
+		profilePic.setAttribute("src", "images/zsbw.jpg");
+		nodesToKeep[0] = profilePic;
+*/
+		nodesToKeep[0] = document.getElementById("profile");
+    $( document ).ready(function() {
+      next("hello", true);
+    });
+
+    function next ( page, animate ) {
+      removeNodesFromMain();
+      var div;
+
+      if (page == "hello") {
+        div = buildHello();
+      } else if (page == "music") {
+        div = buildMusic();
+      } else if (page == "note") {
+        div = buildNote();
+      } else if (page == "snap") {
+        div = buildSnap();
+      }
+
+			if (animate) {
+     		animateIn( div );
+			}
+    }
+
+		function canRemoveNode( node ) {
+			for (var i = 0; i < nodesToKeep.length; i++)
+			{
+				var k = nodesToKeep[i];
+				if (k == node)
+					return false;
+			}
+			return true;
+		}
+
+    function removeNodesFromMain () {
+      var mainDiv = document.getElementById("main");
+			for (var i = (mainDiv.childNodes.length-1); i >= 0; i--)
+			{
+				var child = mainDiv.childNodes[i];
+				if (canRemoveNode(child))
+       		mainDiv.removeChild(child);
+			}
+    }
+    </script>
+</body>
+</html>

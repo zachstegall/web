@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bach broh.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link id="size-stylesheet" rel="stylesheet" type="text/css" href="css/wide.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script src="jquery-1.12.1.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60246159-1', 'auto');
+  ga('send', 'pageview');
+
+
+	function adjustStyle(width) {
+		width = parseInt(width);
+		if (width <= 414) {
+			$("#size-stylesheet").attr("href", "css/narrow.css");
+		} else {
+			$("#size-stylesheet").attr("href", "css/wide.css");
+		}
+	}
+
+	$(function() {
+		adjustStyle($(this).width());
+		$(window).resize(function() {
+			adjustStyle($(this).width());
+		});
+	});
+
+	$( document ).ready(function() {
+		var div = document.getElementById("broh");
+		$(div).animate({
+			opacity: 1.0
+		},
+		700, function() {
+		
+		});
+	});
+</script>
+</head>
+
+<body>
+  <div id="main" class="present">
+		<div id="broh">
+			<h2>broh.</h2>
+			<div id="brohbody">
+				<div id="brohbodysection">
+					<h3>may 20-22<br><br>hey brohs, it is t-minus 1 month till St. Louis.<br><br></h3>
+				</div>
+				
+				<div id="brohbodysection">
+					<h3>friday</h3>
+					<p>I’ll be getting to the house around 3:00pm (check-in @ 2:00pm). 
+						 	Since people will be trickling in at different times, I thought we could stay at the house and grill this night.<br> 
+							Planning on getting a Keg of Bud-light or Budweiser.<br>
+							Might need someone to take me to Vincents Market for that.</p>
+				</div>
+				
+				<div id="brohbodysection">
+					<h3>saturday</h3>
+					<h4>afternoon</h4>
+					<p>Game is at 3:05pm.<br> 
+							We could eat lunch beforehand in Ballpark Village at PBR or Brew House or we could go to Pappy’s Smokehouse or somewhere else.<br>
+							Up for debate.<br>
+							If we don't do Ballpark Village before the game, we could hit it up afterward.
+					<h4>night</h4>
+					<p>There are a couple of bar crawl options I found in Washington Avenue, Laclede's Landing or Downtown South. All 3 of those are relatively close to the stadium. After that, penthouse club?? Or a cheaper, country strip club. And if we are really feeling it, there is the Lumiere Place Casino.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

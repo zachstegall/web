@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h2, p {
+	text-align: left;
+	color: rgba(0, 0, 0, 1.0);
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+h2 {
+	font-size: 11.5em;
+	max-height: 190px;
+}
+
+h3 {
+	margin-top: 0.5em;
+	margin-bottom: 0.2em;
+}
+
+h4 {
+	margin-top: 0em;
+	margin-bottom: 1.0em;
+}
+
+p {
+	font-size: 3.0em;
+}
+
+div#main.present {
+	margin: 0 auto;
+	width: 41em;
+}
+
+.present div {
+	margin-left: 9.5em;
+	width: 31.5em;
+}
+
+.present p {
+	border-left: rgba(0, 0, 0, 1.0) solid thin;
+	text-align: left;
+	margin-left: 0.7em;
+	padding: 0.5em 0 0.5em 0.5em;
+}
+
+.present p#last {
+	padding-bottom: 5.0em;
+	margin-bottom: 0.5em;
+}
+
+div#links, div#snapbody, div#notebody, div#musicbody, div#brohbody {
+        margin-left: 15px;
+}
+
+a#link {
+        font-size: 1.5em;
+        margin-right: 0.75em;
+}
+
+sup {
+	font-size: 0.6em;
+}
+
+img#profile {
+	width: 150px;
+        height: 150px;
+	border-radius: 75px;
+	float: left;
+        margin-top: 42px;
+}
+
+
+
+/* HELLO_SECTION */
+
+#hello p {
+	margin-top: 0.5em;
+}
+
+div#hello {
+	opacity: 0;
+}
+
+
+/* MUSIC_SECTION */
+
+#music h3 {
+	font-size: 2.0em;
+}
+
+div#music {
+	opacity: 0;
+}
+
+#music p {
+	font-size: 1.6em;
+}
+
+div#musicbodysection {
+	margin: 0;
+}
+
+img#musicimg {
+	width: 40px;
+	height: 40px;
+}
+
+
+/* NOTE_SECTION */
+
+div#note {
+	opacity: 0;
+}
+
+#note h3 {
+	font-size: 2.0em;
+}
+
+#note h4 {
+	font-size: 1.1em;
+}
+
+#note p {
+	font-size: 1.55em;
+}
+
+div#notebodysection {
+	margin: 0;
+}
+
+
+/* SNAP_SECTION */
+
+div#snap {
+	opacity: 0;
+}
+
+#snap h3 {
+	font-size: 1.8em;
+}
+
+#snap h4 {
+	font-size: 1.0em;
+	margin-bottom: 0.5em;
+}
+
+div#snapbodysection {
+	margin: 0 0 2.0em 0;
+}
+
+
+/* BROH_SECTION */
+
+div#broh {
+	opacity: 0;
+}
+
+#broh h3 {
+	font-size: 1.8em;
+}
+
+#broh h4 {
+	font-size: 1.0em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#broh p {
+	font-size: 1.4em;
+}
+
+div#brohbodysection {
+        margin: 0;
+}

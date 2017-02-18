@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zachary Stegall</title>
+<link rel="stylesheet" type="text/css" href="layout.css">
+
+<script src="jquery-1.12.1.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60246159-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+	<header id="wrapper">
+      <h1>ZS</h1>
+      <div id="blog">
+      	<img class="bottom" src="images/blogclear300.png" alt=""/>
+      	<a href="blog.html"><img class="top" src="images/blogblur300.png" alt=""/></a>
+  	  </div>
+      <div id="home">
+      	<img class="bottom" src="images/homeclear300.png" alt=""/>
+      	<a href="index.html"><img class="top" src="images/homeblur300.png" alt=""/></a>
+      </div>
+      <div id="photos">
+      	<img class="bottom" src="images/photosclear300.png" alt=""/>
+      	<a href="photos.html"><img class="top" src="images/photosblur300.png" alt=""/></a>
+      </div>
+	</header>
+
+  <section id="about">
+    <p>Software Engineer in Sunnyvale, CA</p>
+		<br />
+    <p>What I'm Listening To</p>
+		<script>
+      function arrayContainsItem ( itemArray, item )
+      {
+        for (var i = 0; i < itemArray.length; i++)
+        {
+          if (itemArray[i] == item)
+            return true;
+        }
+        return false;
+      }
+
+		  $( document ).ready(function()
+      {
+    		$.get( "api/v1/skap/song/many.php", { cnt: 5 }, function( response )
+        {
+					var data = $.parseJSON(response);
+					var songArray = data.payload.songs;
+          var artistIdArray = []; // <ArtistId>
+          var songArtistArray = []; // <ArtistId, SongTitle, Paragraph Element>
+          for (var i = 0; i < songArray.length; i++)
+					{
+            var index = artistIdArray.length - 1;
+            if (!arrayContainsItem(artistIdArray, songArray[i].artist_id))
+            {
+              index = index + 1;
+              artistIdArray[index] = songArray[i].artist_id;
+            }
+
+            var newP = document.createElement("p");
+            document.getElementById("about").appendChild(newP);
+            songArtistArray[songArtistArray.length] = [ songArray[i].artist_id, songArray[i].title, newP ];
+          }
+					for (var i = 0; i < artistIdArray.length; i++)
+					{
+            $.get( "api/v1/skap/artist/one.php", { id: artistIdArray[i] }, function( response )
+            {
+              data = $.parseJSON(response);
+              var artist = data.payload.title;
+              var artistId = data.payload.id;
+              for (var j = 0; j < songArtistArray.length; j++)
+              {
+								var sa = songArtistArray[j];
+                if (sa[0] == artistId)
+                {
+                  var p = sa[2];
+                  var newPText = document.createTextNode( sa[1] + ' by ' + artist );
+                  p.appendChild( newPText );
+                }
+              }
+            } );
+					}
+				} );
+			});
+		</script>
+  </section>
+
+  <footer>
+    <small>© 2014 Zachary Stegall</small>
+    <div id="social">
+      <a href="https://github.com/zachstegall" target="_blank"><img src="images/icons/github.png"  alt=""/></a>
+      <a href="https://plus.google.com/u/0/+ZachStegall" target="_blank"><img class="imgtopad" src="images/icons/googleplus.png" alt=""/></a>
+      <a href="http://instagram.com/zacharystegall__" target="_blank"><img class="imgtopad" src="images/icons/instagram.png" alt=""/></a>
+      <a href="https://www.linkedin.com/profile/view?id=178877347&trk=nav_responsive_tab_profile_pic" target="_blank"><img class="imgtopad" src="images/icons/linkedin.png" alt=""/></a>
+      <a href="https://soundcloud.com/zachstegall" target="_blank"><img class="imgtopad" src="images/icons/soundcloud.png" alt=""/></a>
+      <a href="https://twitter.com/zacharystegall" target="_blank"><img class="imgtopad" src="images/icons/twitter.png" alt=""/></a>
+    </div>
+  </footer>
+</body>
+</html>

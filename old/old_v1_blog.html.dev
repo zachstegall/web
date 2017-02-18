@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Blog - Zachary Stegall</title>
+<link rel="stylesheet" type="text/css" href="layout.css">
+
+<script src="jquery-1.12.1.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60246159-1', 'auto');
+  ga('send', 'pageview');
+
+	function getMonthString ( month ) {
+		var day = "";
+    switch ( month ) {
+      case 0:
+          day = "J1";
+          break;
+      case 1:
+          day = "F";
+          break;
+      case 2:
+          day = "M1";
+          break;
+      case 3:
+          day = "A1";
+          break;
+      case 4:
+          day = "M2";
+          break;
+      case 5:
+          day = "J2";
+          break;
+      case 6:
+          day = "J3";
+          break;
+      case 7:
+          day = "A2";
+          break;
+      case 8:
+          day = "S";
+          break;
+      case 9:
+          day = "O";
+          break;
+      case 10:
+          day = "N";
+          break;
+      case 11:
+          day = "D";
+          break;
+    }
+
+    return day;
+  }
+
+  function getYearString ( year ) {
+    return year.toString().slice(2,4);
+  }
+
+  function getDateFormattedString ( date ) {
+    return getMonthString( date.getUTCMonth() ) + ' ' + date.getDate() + ', ' + getYearString( date.getFullYear() );
+  }
+
+  function getDateString ( timestamp ) {
+    var date = new Date( Number(timestamp) );
+    return getDateFormattedString( date );
+  }
+</script>
+
+</head>
+
+<body>
+	<header id="wrapper">
+      <h1>Bl</h1>
+      <div id="blog">
+      	<img class="bottom" src="images/blogclear300.png" alt=""/>
+      	<a href="blog.html"><img class="top" src="images/blogblur300.png" alt=""/></a>
+  	  </div>
+      <div id="home">
+      	<img class="bottom" src="images/homeclear300.png" alt=""/>
+      	<a href="index.html"><img class="top" src="images/homeblur300.png" alt=""/></a>
+      </div>
+      <div id="photos">
+      	<img class="bottom" src="images/photosclear300.png" alt=""/>
+      	<a href="photos.html"><img class="top" src="images/photosblur300.png" alt=""/></a>
+      </div>
+	</header>
+
+    <section id="blogs">
+      <h4 id="blogts"></h4>
+      <h2 id="blogtitle"></h2>
+
+			<div id="blogbody"></div>
+			<script>
+		 	 $( document ).ready(function() {
+    			$.get( "api/v1/web/blog/many.php", { cnt: 5 }, function( response ) {
+						var data = $.parseJSON(response);
+						var postArray = data.payload.posts;
+						for (var i = 0; i < postArray.length; i++)
+						{
+							var b = postArray[i];
+							var newTs = document.createElement("h4");
+							var newTsContent = document.createTextNode( getDateString(b.ts) );
+							newTs.appendChild( newTsContent );
+
+							var newTitle = document.createElement("h2");
+							var newTitleContent = document.createTextNode( b.title );
+							newTitle.appendChild( newTitleContent );
+							
+							var newBody = document.createElement("div");
+							newBody.innerHTML = b.body;
+
+							document.getElementById("blogs").appendChild( newTs );
+							document.getElementById("blogs").appendChild( newTitle );
+							document.getElementById("blogs").appendChild( newBody );
+						}
+					} );
+				});
+			</script>
+    </section>
+
+    <footer>
+      <small>© 2014 Zachary Stegall</small>
+      <div id="social">
+        <a href="https://github.com/zachstegall" target="_blank"><img src="images/icons/github.png"  alt=""/></a>
+        <a href="https://plus.google.com/u/0/+ZachStegall" target="_blank"><img class="imgtopad" src="images/icons/googleplus.png" alt=""/></a>
+        <a href="http://instagram.com/zacharystegall__" target="_blank"><img class="imgtopad" src="images/icons/instagram.png" alt=""/></a>
+        <a href="https://www.linkedin.com/profile/view?id=178877347&trk=nav_responsive_tab_profile_pic" target="_blank"><img class="imgtopad" src="images/icons/linkedin.png" alt=""/></a>
+        <a href="https://soundcloud.com/zachstegall" target="_blank"><img class="imgtopad" src="images/icons/soundcloud.png" alt=""/></a>
+        <a href="https://twitter.com/zacharystegall" target="_blank"><img class="imgtopad" src="images/icons/twitter.png" alt=""/></a>
+      </div>
+    </footer>
+</body>
+</html>
