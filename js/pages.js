@@ -58,7 +58,7 @@ function buildNote () {
   // --
 
   $.get("data/notes.json", function(response) {
-    var postArray = response.notes;
+    var postArray = JSON.parse(response).notes;
 
     // Outer div
     var noteBody = document.createElement("div");
@@ -88,7 +88,7 @@ function buildNote () {
         p.setAttribute("id", "last");
 
       bodySection.appendChild(h3);
-      bodySection.appendChild(h4); 
+      bodySection.appendChild(h4);
       bodySection.appendChild(p);
       noteBody.appendChild(bodySection);
     }
