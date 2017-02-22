@@ -16,7 +16,7 @@ function addLinks ( div, curpage ) {
     var a = document.createElement("a");
     a.setAttribute("id", "link");
     a.setAttribute("onclick", "next( this.innerHTML, false )");
-    a.appendChild(document.createTextNode("music"));
+    a.appendChild(document.createTextNode("note"));
     innerDiv.appendChild(a);
   }
 
@@ -50,7 +50,7 @@ function buildNote () {
   div.setAttribute("id", "note");
 
   var h2 = document.createElement("h2");
-  var h2TextNode = document.createTextNode("music");
+  var h2TextNode = document.createTextNode("note");
   h2.appendChild(h2TextNode);
   div.appendChild(h2);
   addLinks(div, "note");
