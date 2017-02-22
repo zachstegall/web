@@ -16,7 +16,7 @@ function addLinks ( div, curpage ) {
     var a = document.createElement("a");
     a.setAttribute("id", "link");
     a.setAttribute("onclick", "next( this.innerHTML, false )");
-    a.appendChild(document.createTextNode("note"));
+    a.appendChild(document.createTextNode("music"));
     innerDiv.appendChild(a);
   }
 
@@ -49,16 +49,15 @@ function buildNote () {
   var div = document.createElement("div");
   div.setAttribute("id", "note");
 
-
   var h2 = document.createElement("h2");
-  var h2TextNode = document.createTextNode("note");
+  var h2TextNode = document.createTextNode("music");
   h2.appendChild(h2TextNode);
   div.appendChild(h2);
   addLinks(div, "note");
   // --
 
   $.get("data/notes.json", function(response) {
-    var postArray = JSON.parse(response).notes;
+    var postArray = response.notes;
 
     // Outer div
     var noteBody = document.createElement("div");
