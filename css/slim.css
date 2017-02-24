@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h2 {
+	font-size: 128px;
+}
+
+div#area {
+	margin-left: 3.1em;
+	margin-right: 3.1em;
+}
+
+div#header {
+	padding-bottom: 13px;
+}
+
+div#content {
+	margin-left: 0.4em;
+}
+
+.header-unfocused {
+	margin-left: 33px;
+}

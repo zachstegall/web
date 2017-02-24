@@ -2,32 +2,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Zach Stegall</title>
+<title>Zach Stegall - notes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/hello.css">
+<link rel="stylesheet" type="text/css" href="css/notes.css">
 <link id="size-stylesheet" rel="stylesheet" type="text/css" href="css/wide.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <script src="jquery-1.12.1.js"></script>
 <script type="text/javascript" src="js/analytics.js"></script>
 <script type="text/javascript" src="js/style.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/notes.js"></script>
 </head>
 
 <body>
   <div id="header">
     <div id="area">
-      <h2 class="header-focused">hello</h2>
+      <h2 class="header-focused">notes</h2>
+      <a class="header-unfocused" href="index.html">hello</a>
       <a class="header-unfocused" href="songs.html">songs</a>
-      <a class="header-unfocused" href="notes.html">notes</a>
     </div>
   </div>
-  <div id="area">
+  <div id="area" class="notes">
     <div id="content">
-      <h3>zach stegall</h3>
-      <h4>sde, mobile - alexa</h4>
-      <p>
-        <img src="images/bigsur.jpg">
-      </p>
+      <script>
+        buildNotes();
+      </script>
     </div>
   </div>
 </body>

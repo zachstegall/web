@@ -1,18 +1,33 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*
 h2, p {
 	text-align: left;
 	color: rgba(0, 0, 0, 1.0);
 	margin-bottom: auto;
 	margin-top: auto;
 }
+*/
 
 h2 {
-	font-size: 7.5em;
-	max-height: 125px;
+	font-size: 19.8vw;
 }
 
+div#area {
+	margin-left: 3.1em;
+	margin-right: 3.1em;
+}
+
+div#header {
+	padding-bottom: 2.7vw;
+}
+
+.header-unfocused {
+	margin-left: 5.5vw;
+}
+
+/*
 h3 {
 	margin-top: 0.5em;
 	margin-bottom: 0.2em;
@@ -70,38 +85,4 @@ img#profile {
 	margin-left: auto;
 	margin-right: auto;
 }
-
-
-
-/* HELLO_SECTION */
-
-#hello p {
-	margin-top: 0.5em;
-}
-
-div#hello {
-	opacity: 0;
-}
-
-
-/* NOTE_SECTION */
-
-div#note {
-	opacity: 0;
-}
-
-#note h3 {
-	font-size: 1.8em;
-}
-
-#note h4 {
-	font-size: 1.0em;
-}
-
-#note p {
-	font-size: 1.4em;
-}
-
-div#notebodysection {
-	margin: 0;
-}
+*/
