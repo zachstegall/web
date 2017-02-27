@@ -51,6 +51,11 @@ p {
 	padding: 0.5em 0 1.0em 1.5em;
 }
 
+sup {
+	font-size: 0.6em;
+	vertical-align: top;
+}
+
 p.notes {
 	border: 0;
 	margin-left: 0;
@@ -82,12 +87,16 @@ div#header {
 	padding: 0 0 20px 0;
 }
 
-.header-unfocused {
-	margin-left: 50px;
-}
-
 div#content {
 	margin-left: 0.8em;
+}
+
+div#refs {
+	font-size: 0.5em;
+}
+
+.header-unfocused {
+	margin-left: 50px;
 }
 
 a {
