@@ -2,6 +2,13 @@
   "songs": [
     {
       "id": "8",
+      "title": "how it fades",
+      "body": "<a href=https://itun.es/us/21_zr>Daniel Martin Moore</a><br>maybe we can never know",
+      "img": "howitfades.jpg",
+      "ts": 1488264185000
+    },
+    {
+      "id": "7",
       "title": "i don't wanna dance",
       "body": "<a href=https://itun.es/us/P7qH5>COIN</a><br>I don't know how",
       "img": "idwdance.jpg",
